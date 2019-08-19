@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Place Order</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.8.2-web/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/myStyke.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+    </style>
+</head>
+<body>
+<!-----------------nav_st------------------------------->
+<nav class="navbar m_navbar fixed-top">
+
+    <div id="acc"></div>
+</nav>
+<nav class="navbar m_navbar fixed-top">
+    <span class="logo-mini"></span>
+    <!-- logo for regular state and mobile devices -->
+    <span class="logo-lg"><b>POS</b>Point Of Sale</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+
+</nav>
+<div id="side_nav">
+
+    <ul>
+        <li><a href="index.html"><i class="fas fa-tachometer-alt"></i>DashBoard</a></li>
+        <li><a href="customers.html" class="m_active"><i class="fas fa-users"></i>Customers</a></li>
+        <li><a href="items.html"><i class="fas fa-cubes"></i>Items</a></li>
+        <li><a href="orders.html"><i class="fas fa-notes-medical"></i>Order</a></li>
+    </ul>
+
+
+</div>
+<!--------------------Body------------------------------>
+<div class="m_content">
+        <div class="card-header">
+            <h3>Place Order</h3>
+        </div>
+        <div class="m_card">
+            <form id="order_form">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>OrderID</label>
+                        <input type="text" class="form-control" placeholder="First Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Select Customer</label>
+                        <select id="cid"  class="form-control">
+                            <option selected>Choose Customer...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Select Item</label>
+                            <select id="item"  class="form-control">
+                                <option selected>Choose...</option>
+                            </select>
+                        </div>
+                    <div class="form-group col-md-6">
+                        <label>ItemName</label>
+                        <input id="itemName" type="text" class="form-control" disabled placeholder="ItemName">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label>Avilable Qty</label>
+                        <input id="avi_qty" type="text" disabled class="form-control" placeholder="Qty">
+                    </div>
+                    <div class="form-group col">
+                        <label>Unit Price</label>
+                        <input id="price" type="text" class="form-control" placeholder="Price" disabled>
+                    </div>
+                    <div class="form-group col">
+                        <label>Buying Qty</label>
+                        <input id="qty" type="text" class="form-control" placeholder="Qty">
+                    </div>
+                    <div class="form-group col-12">
+                    <button id="addToCart" class="btn btn-success float-right" type="button">Add To Cart</button>
+                    </div>
+                </div>
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ItemCode</th>
+                        <th scope="col">ItemName</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">UnitPrice</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label>Total</label>
+                        <input id="total" type="text" class="form-control" placeholder="Price" disabled>
+                    </div>
+                    <div class="form-group col">
+                        <label>Discount</label>
+                        <input id="discount" type="text" class="form-control" placeholder="Qty">
+                    </div>
+                    <div class="form-group col">
+                        <label>Sub-Total</label>
+                        <input id="sub-total" type="text" class="form-control" placeholder="Qty" disabled>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label>Paid Amount</label>
+                        <input id="paid-amount" disabled type="text" class="form-control" placeholder="Price">
+                    </div>
+                    <div class="form-group col">
+                        <label>Balance</label>
+                        <input id="balance" type="text" class="form-control" placeholder="Balance" disabled>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                <button type="button" id="confrm" class="btn btn-primary float-right">Confirm Order</button>
+                </div>
+            </form>
+        </div>
+    <!-------------------------Footer------------------------->
+    <footer class="modal-footer">
+        <span>Nayana katipearachchi. All rights reserved.</span>
+    </footer>
+</div>
+<!-----------------------scripts------------------------>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/dataJS.js"></script>
+<script>
+    $("#confrm").click(function () {
+        alert("Order added")
+    })
+</script>
+</body>
+</html>
